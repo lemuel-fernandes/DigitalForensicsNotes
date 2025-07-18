@@ -1,0 +1,64 @@
+name: Update Fork Users List
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  update-fork-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Fork Users and Update Markdown
+        id: generate
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const allForks = await github.paginate(
+              github.rest.repos.listForks,
+              { owner, repo, per_page: 100 }
+            );
+
+            const forkUsernames = allForks.map(fork => `- [@${fork.owner.login}](https://github.com/${fork.owner.login})`);
+            const forkCount = forkUsernames.length;
+
+            const newContent = [
+              '# Repo Fork Users',
+              '',
+              `Total Forks: **${forkCount}**`,
+              '',
+              '## List of Fork Users:',
+              forkUsernames.join('\n')
+            ].join('\n');
+
+            fs.writeFileSync('repo-master.md', newContent);
+
+      - name: Check for changes in repo-master.md
+        id: check_changes
+        run: |
+          git add repo-master.md
+          if git diff --staged --quiet; then
+            echo "No changes detected"
+          else
+            echo "changes_detected=true" >> $GITHUB_ENV
+          fi
+
+      - name: Commit and Push Changes if Fork List Updated
+        if: env.changes_detected == 'true'
+        run: |
+          git config user.name "GitHub Action Bot"
+          git config user.email "action@github.com"
+          git add repo-master.md
+          git commit -m "Update repo-master.md with latest fork user list"
+          git push
