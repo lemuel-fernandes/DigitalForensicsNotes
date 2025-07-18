@@ -128,6 +128,6 @@ Malware (Malicious Software) is any program designed to harm or exploit systems,
 - Malware detection uses static and dynamic analysis techniques.
 - Practical tools include Autopsy, VirusTotal, PEStudio.
 
----
+----
 
 End of Notes
