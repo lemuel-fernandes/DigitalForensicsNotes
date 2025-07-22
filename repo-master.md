@@ -1,8 +1,9 @@
 # Repo Fork Users
 
-Total Forks: **57**
+Total Forks: **58**
 
 ## List of Fork Users:
+- [@SrivatsalyaBhavaraju](https://github.com/SrivatsalyaBhavaraju)
 - [@sashsilva](https://github.com/sashsilva)
 - [@Ashutosh-dash19](https://github.com/Ashutosh-dash19)
 - [@Nikhil-Emmanuel](https://github.com/Nikhil-Emmanuel)
