@@ -62,7 +62,7 @@ A step-by-step lab using **Kali Linux** (attacker) and **Windows 10** (victim) 
 4. **Start Villain**:
 
    ```bash
-   python villain.py
+   python3 Villain.py
    ```
 
    You’ll see the `villain>` prompt.
