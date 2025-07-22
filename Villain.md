@@ -47,7 +47,7 @@ A step-by-step lab using **Kali Linux** (attacker) and **Windows 10** (victim) 
 2. **Clone Villain**:
 
    ```bash
-   git clone [https://github.com/yourusername/Villain.git](https://github.com/keralahacker/Villain.git)
+   git clone https://github.com/keralahacker/Villain.git
    cd Villain
    ```
 
