@@ -52,12 +52,14 @@ A step-by-step lab using **Kali Linux** (attacker) and **Windows 10** (victim) 
    ```
 
    > If GitHub is blocked (e.g. college Wi‑Fi), use a VPN or your phone’s hotspot.
-3. **(Optional) Install Python deps**:
+3. **Install Python deps**:
 
    ```bash
    pip install -r requirements.txt
    ```
-
+   ```bash
+   sudo pip install -r requirements.txt --break-system-packages
+   ```
    If it fails, skip to next step.
 4. **Start Villain**:
 
