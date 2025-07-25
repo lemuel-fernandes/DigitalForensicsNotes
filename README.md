@@ -18,6 +18,7 @@ This repository contains notes and resources related to Digital Forensics. Below
 
 5. [MacOS.md](https://github.com/sector21/DigitalForensicsNotes/blob/main/MacOS.md)  
    Forensics in MacOS environments.
+   [MacOS Installation in VirtualBox on Windows 10/11](https://github.com/sector21/DigitalForensicsNotes/blob/main/MacOS-VM_Installation.md)
 
 6. [Villain.md](https://github.com/sector21/DigitalForensicsNotes/blob/main/Villain.md)  
    Notes on using Villain Framework for penetration testing and exploitation.
