@@ -1,41 +1,111 @@
 # Simple Villain Framework Lab Guide
 
-A step-by-step lab using **Kali Linux** (attacker) and **Windows 10** (victim) in VirtualBox, from payload gen to file transfers.
+# 1. VirtualBox Kali VM & Real-World Networking Setup
+
+## 🧩 Prerequisites
+
+```markdown
+- VirtualBox installed on Host (Windows or Linux)
+- Kali Linux VM installed
+- VirtualBox Extension Pack (optional but recommended)
+- Administrator access on both host and guest
+- Mobile hotspot capability for simulation
+```
 
 ---
 
-## 1. VirtualBox VM & Networking Setup
+##  Part 1: Host-Only Adapter Networking (VirtualBox)
 
-1. **Create VMs** in VirtualBox:
+###  Step 1: Configure Adapter 2 Before Starting Kali VM
 
-   * **Kali Linux**
-   * **Windows 10**
-2. **Set both adapters** to an **Internal Network** (or Host-Only) named `LabNet`.
-3. **Assign static IPs** on the same `/24` subnet:
+```markdown
+1. Open VirtualBox Manager
+2. Select your Kali Linux VM → Click Settings
+3. Go to the Network tab
+4. Enable Adapter 2:
+   - Enable Network Adapter (checked)
+   - Attached to: Host-Only Adapter
+5. Select the host-only network (e.g., VirtualBox Host-Only Ethernet Adapter)
+```
 
-   * **Kali** (terminal):
+###  Step 2: Identify Network Adapters on Host & Kali
 
-     ```bash
-     sudo ip addr add 192.168.56.10/24 dev eth0
-     sudo ip link set eth0 up
-     ```
-   * **Windows 10** (Control Panel → Network Adapter → IPv4 settings):
+#### On Host (Windows):
+```bash
+ipconfig
+```
 
-     ```text
-     IP address:    192.168.56.20
-     Subnet mask:   255.255.255.0
-     Gateway/DNS:   (leave blank)
-     ```
-4. **Verify connectivity**:
+#### On Kali VM:
+```bash
+ip a
+```
 
-   ```bash
-   # On Kali
-   ping 192.168.56.20
-   ```
+> ✅ You should see a new interface like `eth1` or `enp0s8` (depending on VirtualBox config)
 
-   You should see replies.
+###  Step 3: Ensure Both Are on the Same Subnet
+
+```markdown
+Example:
+- Windows Host IP: 192.168.56.1
+- Kali VM IP: 192.168.56.101
+```
+
+>  Make sure both IPs fall within the same subnet range like `192.168.56.0/24`
+
+###  Step 4: Test Connectivity
+
+#### From Host to Kali:
+```bash
+ping 192.168.56.101
+```
+
+#### From Kali to Host:
+```bash
+ping 192.168.56.1
+```
+
+> ✔ If both are reachable, host-only networking is correctly configured.
 
 ---
+
+##  Part 2: Real-World Payload Delivery via Mobile Hotspot
+
+###  Objective
+Simulate real-world payload delivery by connecting two physical PCs (Attacker and Victim) over a common mobile hotspot.
+
+###  Step 1: Connect Both PCs to Mobile Hotspot
+
+```markdown
+1. Turn on mobile hotspot on your smartphone
+2. Connect both Attacker and Victim laptops to the hotspot
+3. Use terminal or CLI to verify both systems are in the same subnet
+```
+
+#### On Both PCs:
+```bash
+# Windows
+ipconfig
+
+# Linux/Kali
+ifconfig
+```
+
+#### IP Confirmation:
+```markdown
+- Attacker IP: 192.168.43.120
+- Victim IP: 192.168.43.101
+```
+
+> ✅ Same subnet confirmed
+
+---
+
+Use this guide for setting up practical labs or red team exercises. For ethical hacking training only. Contact your admin before using in any production or personal environment.
+
+---
+
+
+
 
 ## 2. Prepare Kali Attacker
 
