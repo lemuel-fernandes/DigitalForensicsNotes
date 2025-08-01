@@ -55,10 +55,12 @@ A step-by-step lab using **Kali Linux** (attacker) and **Windows 10** (victim) 
 3. **Install Python deps**:
 
    ```bash
-   pip install -r requirements.txt
+   python3 -m venv venv
+   source venv/bin/activate
+   pip3 install -r requirements.txt
    ```
    ```bash
-   sudo pip install -r requirements.txt --break-system-packages
+   sudo pip3 install -r requirements.txt --break-system-packages
    ```
    If it fails, skip to next step.
 4. **Start Villain**:
