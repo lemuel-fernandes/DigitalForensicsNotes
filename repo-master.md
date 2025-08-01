@@ -3,6 +3,7 @@
 Total Forks: **59**
 
 ## List of Fork Users:
+- [@JoshuaMac003](https://github.com/JoshuaMac003)
 - [@jonahmathew-droid](https://github.com/jonahmathew-droid)
 - [@SrivatsalyaBhavaraju](https://github.com/SrivatsalyaBhavaraju)
 - [@sashsilva](https://github.com/sashsilva)
@@ -58,7 +59,6 @@ Total Forks: **59**
 - [@adityamenon2205](https://github.com/adityamenon2205)
 - [@abinss123](https://github.com/abinss123)
 - [@ronprajoth](https://github.com/ronprajoth)
-- [@NihalNavath](https://github.com/NihalNavath)
 - [@SaaL2568](https://github.com/SaaL2568)
 - [@lemuel-fernandes](https://github.com/lemuel-fernandes)
 - [@JO-Techs](https://github.com/JO-Techs)
