@@ -1,8 +1,11 @@
 # Repo Fork Users
 
-Total Forks: **59**
+Total Forks: **62**
 
 ## List of Fork Users:
+- [@Rahul-Rajesh04](https://github.com/Rahul-Rajesh04)
+- [@kryptonite2257](https://github.com/kryptonite2257)
+- [@mathanhack](https://github.com/mathanhack)
 - [@JoshuaMac003](https://github.com/JoshuaMac003)
 - [@jonahmathew-droid](https://github.com/jonahmathew-droid)
 - [@SrivatsalyaBhavaraju](https://github.com/SrivatsalyaBhavaraju)
