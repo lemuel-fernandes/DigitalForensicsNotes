@@ -1,13 +1,5 @@
-I’m checking the workspace for `mob.txt` and any `.txt` files to locate the target. If it’s not present, I’ll ask you to provide the file or confirm the intended source.
-Ran tool
-Ran tool
-Ran tool
 
-Reading `mob.txt` to extract its contents and then I’ll produce clear, structured markdown notes.
-Ran tool
-
-### Mobile Forensics – Guided Notes (Easy-to-Understand, Markdown)
-
+### Mobile Forensics 
 #### What you’ll learn
 - Stages and practical methods of mobile acquisition and analysis
 - Android fundamentals: ADB, rooting, extraction methods
@@ -235,7 +227,3 @@ nc 127.0.0.1 8888 > android.dd
 - DFU: Device Firmware Upgrade mode on iOS devices.
 
 ---
-
-- Created structured notes from `mob.txt`, focusing on practical steps, pros/cons, commands, and legal/handling considerations.
-- Included actionable checklists and command snippets for ADB, manual, and physical acquisition.
-- Summarized advanced methods (JTAG, Chip-Off, Micro-read) and iOS workflows with tool-based examples.
